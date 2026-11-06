@@ -1,5 +1,5 @@
 return {
-  {
+	{
 		"mason-org/mason.nvim",
 		config = function()
 			require("mason").setup()
@@ -16,15 +16,15 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			vim.lsp.config("lua_ls", {
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			vim.lsp.enable("lua_ls")
 
 			vim.lsp.config("vtsls", {
-        capabilities = capabilities
-      })
+				capabilities = capabilities,
+			})
 			vim.lsp.enable("vtsls")
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
