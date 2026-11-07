@@ -14,7 +14,7 @@ return {
                 auto_open = false, -- Automatically open the tree when switching to a directory
             },
             view = {
-                width = 30,
+                width = 40,
                 relativenumber = true,
                 side = "left",
             },
