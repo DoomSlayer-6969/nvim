@@ -1,6 +1,8 @@
 require("core")
 
-
+-- =======================================================
+-- Load lazy vim
+-- ======================================================= 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -28,3 +30,10 @@ require("lazy").setup({
 		notify = false,
 	},
 })
+
+-- Load persisted colortheme
+local theme_file = vim.fn.stdpath("config") .. "/lua/current-theme.lua"
+
+if vim.fn.filereadable(theme_file) == 1 then
+  dofile(theme_file)
+end
